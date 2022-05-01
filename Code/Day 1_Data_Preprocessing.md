@@ -23,8 +23,8 @@ Y = dataset.iloc[ : , 3].values  // : 全部行 or 列；[a]第a行 or 列
 ```
 ## 第3步：处理丢失数据
 ```python
-from sklearn.preprocessing import Imputer
-imputer = Imputer(missing_values = "NaN", strategy = "mean", axis = 0)
+from sklearn.impute import SimpleImputer
+imputer = SimpleImputer(missing_values = "NaN", strategy = "mean")
 imputer = imputer.fit(X[ : , 1:3])
 X[ : , 1:3] = imputer.transform(X[ : , 1:3])
 ```
